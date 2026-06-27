@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Anonymous</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>Anonymous!</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="profile.html">Profile</a>
+    </div>
+</nav>
+
+<div class="card">
+    <h1>User Profile</h1>
+
+    <p id="usernameDisplay"></p>
+
+    <button onclick="logoutUser()">Logout</button>
+</div>
+
+<script>
+window.onload = function () {
+    const user = localStorage.getItem("user");
+
+    if (user) {
+        document.getElementById("usernameDisplay").innerText =
+            "Logged in as: " + user;
+    } else {
+        document.getElementById("usernameDisplay").innerText =
+            "You are not logged in.";
+    }
+}
+
+function logoutUser() {
+    localStorage.removeItem("user");
+    localStorage.removeItem("pass");
+
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<script>
+    function logoutUser(){
+        localStorage.removeItem("loggedin");
+        localStorage.removeItem("user");
+        localStorage.removeItem("pass")
+
+        alert("Logged out!");
+        window.location.href="login.html";
+    }
+</script>
+
+<script>
+window.onload = function () {
+    const user = localStorage.getItem("user");
+
+    if (loggedIn === "true && user") {
+        document.getElementById("welcomeText").innerText =
+            "Welcome back, " + user + " 👋";
+    } else {
+        document.getElementById("welcomeText").innerText =
+            "You are not logged in. Please login";
+    }
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous! Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <button onclick="logoutUser()">Logout</button>
+    <h2>Anonymous!</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html/">About</a>
+        <a href="projects.html/">Projects</a>
+        <a href="contact.html/">Contact</a>
+        <a href="profile.html">Profile</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Build Modern Websites With Me</h1>
+
+    <p>I'm Anonymous, a beginner web developer learning HTML, CSS and JavaScript.</p>
+
+    <p id="welcomeText"></p>
+
+    <div class="hero-button">
+     <a href="projects.html">
+        <button>View Projects</button></a>
+     <a href="contact.html">
+        <button>Contact Me</button></a>
+        </div>
+
+        </div>
+
+
+    <a href="projrcts.html">
+    <button>View my work</button>
+    </a>
+    <p id="welcome tex.></p>
+</div>
+
+</body>
+</html>

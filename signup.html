@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Anonymous</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>Anonymous!</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="profile.html">Profile</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+    </div>
+</nav>
+
+<div class="card">
+    <h1>Sign Up</h1>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="signupUser()">Create Account</button>
+
+    <p>Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+function signupUser() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username === "" || password === "") {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    localStorage.setItem("user", username);
+    localStorage.setItem("pass", password);
+    localStorage.setItem("loggedIn", "true");
+
+    alert("Account created successfully!");
+
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
